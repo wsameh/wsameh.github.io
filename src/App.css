@@ -1,0 +1,12 @@
+.carouselImage {
+    width: 105%;
+    max-width: 105%;
+    padding: 0;
+    margin: 0;
+}
+
+.appTextArea:focus-visible{
+    outline-color: rgb(25, 118, 210);
+}
+
+
