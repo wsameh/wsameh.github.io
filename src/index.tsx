@@ -55,11 +55,17 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
                     <LazyRevitApiPage/>
                   </React.Suspense>
                 }/>
-                <Route path='web/:section' element={
+                <Route path='web' element={
                   <React.Suspense fallback='loading...'>
                     <LazyWebPage/>
                   </React.Suspense>
-                }/>
+                }>
+                  <Route path='web/:section' element={
+                    <React.Suspense fallback='loading...'>
+                      <LazyWebPage/>
+                    </React.Suspense>
+                  }/>
+                </Route>
                 <Route path='desktop' element={
                   <React.Suspense fallback='loading...'>
                     <LazyDesktopPage/>

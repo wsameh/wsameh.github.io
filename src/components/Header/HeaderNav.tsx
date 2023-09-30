@@ -35,7 +35,7 @@ const HeaderNav: React.FC<IHeaderNavProps> = ({ link }) => {
 
     // Effects
     useEffect(() => {
-        if(location.pathname == `/${link.route}`){
+        if(location.pathname === `/${link.route}`){
             setSelected(true)
             navLinkHoverHandler(false)
         } else {

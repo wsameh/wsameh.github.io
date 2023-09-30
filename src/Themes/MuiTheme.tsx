@@ -33,6 +33,11 @@ export const MuiTheme = createTheme({
       dark: 'rgb(147, 132, 148)',
       contrastText: 'rgba(57, 54, 70, 1)',
     },
+    appButton: {
+      light: 'rgb(123, 74, 130)',
+      main: 'rgb(106, 46, 117)',
+      dark: 'rgb(69, 25, 82)',
+    },
   },
 
   components: {
@@ -250,11 +255,11 @@ export const MuiTheme = createTheme({
             height: '35px',
             margin: '10px 10px 5px auto',
             borderRadius: '5px',
-            backgroundColor: theme.palette.appPrimary.main,
+            backgroundColor: theme.palette.appButton.main,
             color: theme.palette.appPrimary.contrastText,
             fontSize: '0.8rem',
             '&:hover': {
-                backgroundColor: theme.palette.appPrimary.dark,
+                backgroundColor: theme.palette.appButton.light,
                 color: theme.palette.appPrimary.contrastText,
             }
           }),

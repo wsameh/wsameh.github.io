@@ -44,6 +44,7 @@ const ContactMe = () => {
     const location = useLocation()
 
     const [values, setValues] = useState<IFormValues>(defaultValues);
+    const [isFocused, setIsFocused] = useState(false);
 
     // const phoneRegex = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
@@ -87,8 +88,8 @@ const ContactMe = () => {
             input.value = pair[1]
             form.appendChild(input)
         })
-        // if(process.env.EMAILJS_SERVICE_ID !== undefined && process.env.EMAILJS_TEMPLATE_ID !== undefined){
-            EmailJs.send('service_hu9xj07', 'template_pbb06uz', message, '6ljq8VWi6sCKb7BSK')
+        if(process.env.REACT_APP_EMAILJS_SERVICE_ID !== undefined && process.env.REACT_APP_EMAILJS_TEMPLATE_ID !== undefined){
+            EmailJs.send(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, message, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
             .then((result) => {
                 alertContext.setAlert({severity: 'success', children: 'Message has been successfully submitted', open: true})
             }, (error) => {
@@ -96,12 +97,7 @@ const ContactMe = () => {
             });
             reset(defaultValues)
             setValues(defaultValues)
-        // }
-
-        // if(process.env.EMAILJS_SERVICE_ID !== undefined && process.env.EMAILJS_TEMPLATE_ID !== undefined){
-        //     let response: EmailJSResponseStatus = await EmailJs.send(process.env.EMAILJS_SERVICE_ID, process.env.EMAILJS_TEMPLATE_ID, message, process.env.EMAILJS_PUBLIC_KEY)
-        //     console.log(response)
-        // }
+        }
     }
 
     const handleChange = (values: IFormValues) => {
@@ -115,44 +111,40 @@ const ContactMe = () => {
 
     // JSX
     return (
-        <Box height='800px'>
-            <Box
-                width='300px'
-                marginX='auto'
-                marginTop='150px'
-                marginBottom='100px'
-            >
-                <Typography variant='appHeading' >
-                    Contact Me
-                </Typography>
+        <Box width='500px' margin='100px auto 100px auto' >
+            <Typography variant='appHeading' >
+                Contact Me
+            </Typography>
 
-                <TextField
-                    variant='outlined'
-                    label = "Name"
-                    required
-                    {...register('name')}
-                    error = {errors.name ? true : false}
-                    value = {values.name}
-                    onChange = {(event) => handleChange({ ...values, name: event.target.value})}
-                    sx={{width: '300px'}}
-                />
-                <Typography variant='helperText' gutterBottom>
-                    {errors.name?.message}
-                </Typography>
+            <TextField
+                variant='outlined'
+                label = "Name"
+                required
+                {...register('name')}
+                error = {errors.name ? true : false}
+                value = {values.name}
+                onChange = {(event) => handleChange({ ...values, name: event.target.value})}
+                sx={{width: '100%'}}
+            />
+            <Typography variant='helperText' gutterBottom>
+                {errors.name?.message}
+            </Typography>
 
-                <TextField
-                    variant='outlined'
-                    label = "Email"
-                    required
-                    {...register('email')}
-                    error = {errors.email ? true : false}
-                    value = {values.email}
-                    onChange = {(event) => handleChange({ ...values, email: event.target.value})}
-                />
-                <Typography variant='helperText' gutterBottom>
-                    {errors.email?.message}
-                </Typography>
+            <TextField
+                variant='outlined'
+                label = "Email"
+                required
+                {...register('email')}
+                error = {errors.email ? true : false}
+                value = {values.email}
+                onChange = {(event) => handleChange({ ...values, email: event.target.value})}
+                sx={{width: '100%'}}
+            />
+            <Typography variant='helperText' gutterBottom>
+                {errors.email?.message}
+            </Typography>
 
+            <Box position='relative'>
                 <textarea
                     required
                     {...register('message')}
@@ -160,9 +152,11 @@ const ContactMe = () => {
                     onChange = {(event) => handleChange({ ...values, message: event.target.value})}
                     onMouseEnter={() => setTextAreaHover(true)}
                     onMouseLeave={() => setTextAreaHover(false)}
+                    onFocus={() => setIsFocused(true)}
+                    onBlur={() => setIsFocused(false)}
                     style={{
                         height: '300px',
-                        width: '500px',
+                        width: '100%',
                         padding: '5px 10px',
                         fontWeight: '400px',
                         borderColor: errors.message ? 'red' : textAreaHover ? 'black' : 'rgba(0, 0, 0, 0.3)',
@@ -171,22 +165,39 @@ const ContactMe = () => {
                         resize: 'none',
                     }}
                 />
-
-                <Box
-                    width='500px'
-                    display='flex'
-                    justifyContent='space-between'
+                <Typography
+                    sx={{
+                        position: 'absolute',
+                        transform: `translateY(-50%)`,
+                        top: isFocused ? '0' : '10%',
+                        left: isFocused ? '10px' : '15px',
+                        paddingX: isFocused ? '5px' : '0',
+                        fontSize: isFocused ? '12px' : '16px',
+                        color: errors.message ? 'red' : isFocused ? 'rgba(25, 118, 210)' : 'rgba(0, 0, 0, 0.6)',
+                        backgroundColor: 'white',
+                        transition: 'top 0.2s, font-size 0.2s',
+                        zIndex: '5'
+                    }}
                 >
-                    <Typography variant='helperText' gutterBottom>
-                        {errors.message?.message}
-                    </Typography>
-                    <Button
-                        variant='appMain'
-                        onClick={handleSubmit(handleMessage)}
-                    >
-                        Submit
-                    </Button>
-                </Box>
+                    Message *
+                </Typography>
+
+            </Box>
+
+            <Box
+                width='100%'
+                display='flex'
+                justifyContent='space-between'
+            >
+                <Typography variant='helperText' gutterBottom>
+                    {errors.message?.message}
+                </Typography>
+                <Button
+                    variant='appMain'
+                    onClick={handleSubmit(handleMessage)}
+                >
+                    Submit
+                </Button>
             </Box>
         </Box>
     )

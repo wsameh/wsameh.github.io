@@ -54,13 +54,10 @@ const WebPage = () => {
   
     // Effects
     useEffect(() => {
-
       if(section === 'react')
         secOneRef?.current?.scrollIntoView( { behavior: 'smooth' } )
-
       else if (section === 'blazor')
         secTwoRef?.current?.scrollIntoView( { behavior: 'smooth' } )
-
     }, [location])
 
   // JSX

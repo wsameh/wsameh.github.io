@@ -6,13 +6,16 @@ declare module '@mui/material/styles' {
     // Palette Interfaces
     interface Palette {
       appPrimary: Palette['primary'];
-      appPrimaryLight: PaletteOptions['primary'];
-      appTransPrimary: PaletteOptions['primary'];
+      appPrimaryLight: Palette['primary'];
+      appTransPrimary: Palette['primary'];
+      appButton: Palette['primary'];
+
     }
     interface PaletteOptions {
       appPrimary: PaletteOptions['primary'];
       appPrimaryLight: PaletteOptions['primary'];
       appTransPrimary: PaletteOptions['primary'];
+      appButton: PaletteOptions['primary'];
     }
   }
   
@@ -54,6 +57,7 @@ declare module '@mui/material/styles' {
     interface ButtonPropsColorOverrides {
       appPrimary: true;
       appPrimaryLight: true;
+      appButton: true;
     }
     interface ButtonPropsVariantOverrides {
       appMain: true;

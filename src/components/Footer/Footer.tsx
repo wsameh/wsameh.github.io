@@ -4,9 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 // Material UI Components
 import { Box, 
-  Stack, 
-  Divider, 
-  Typography,
+  Stack,
   Button,
   BottomNavigation, 
   BottomNavigationAction 
@@ -97,6 +95,7 @@ const Footer = () => {
           label="Archive" 
           icon={<MessageIcon />}
           sx={{ color: 'appPrimary.contrastText' }}
+          onClick={() => navigate("contactme")}
         />
       </BottomNavigation>
     </>

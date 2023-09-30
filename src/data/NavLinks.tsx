@@ -2,6 +2,7 @@
 export interface INavLink {
     label: string,
     route: string,
+    parentRoute?: string,
     children: INavLink[] | null,
     type: 'pageRoute' | 'sectionRoute'
 }
@@ -34,12 +35,14 @@ const navLinks: INavLink[] = [
             {
                 label: 'React',
                 route: 'react',
+                parentRoute: 'web',
                 type: 'sectionRoute',
                 children: null
             },
             {
                 label: 'Blazor',
                 route: 'blazor',
+                parentRoute: 'web',
                 type: 'sectionRoute',
                 children: null
             }
@@ -61,21 +64,4 @@ const navLinks: INavLink[] = [
 
 // Exports
 export default navLinks
-
-// {
-//     label: 'Revit API',
-//     route: 'revitapi',
-//     children: [
-//         {
-//             label: 'Revit API',
-//             route: 'revitapi',
-//             children: null
-//         },
-//         {
-//             label: 'Revit API',
-//             route: 'revitapi',
-//             children: null
-//         }
-//     ]
-// },
 
