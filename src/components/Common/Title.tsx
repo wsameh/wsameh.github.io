@@ -56,7 +56,7 @@ const Title: React.FC<ITitleProps> = ({children}) => {
                     marginY: 'auto',
                     // borderBottom: (theme) => `2px solid ${theme.palette.appPrimary.light}`,
                     // borderBottom: (theme) => `2px solid rgb(246, 186, 111)`,
-                    borderBottom: (theme) => `2px solid red`,
+                    borderBottom: (theme) => `2px solid ${theme.palette.appButton.light}`,
                     marginBottom: '15px',
                     transition: inViewPort ? 'width 3s' : ''
                 }}

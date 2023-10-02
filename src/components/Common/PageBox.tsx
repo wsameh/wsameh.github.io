@@ -7,7 +7,7 @@ import { Box } from '@mui/material'
 
 // Props Interface
 interface IPageBox {
-  children: ReactNode
+  children?: ReactNode
 }
 
 const PageBox: React.FC<IPageBox> = ({children}) => {

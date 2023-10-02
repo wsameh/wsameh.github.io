@@ -83,7 +83,7 @@ const NavCard: React.FC<INavCardProps> = ({ content }) => {
                 />
             </CardMedia>
             {/* Content */}
-            <CardContent sx={{height: {xs: '100px', sm: '120px', xl: '150px'}, marginBottom: '50px'}}>
+            <CardContent sx={{height: {xs: '100px', sm: '120px', xl: '120px'}, marginBottom: '50px'}}>
                 <Typography variant='navCardText'>
                     {content.text}
                 </Typography>

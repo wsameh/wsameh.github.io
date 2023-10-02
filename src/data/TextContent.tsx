@@ -29,22 +29,22 @@ const textContent: ITextContent[] = [
                     {
                         type: 'paragraph',
                         text: 
-                        `I\'m a Mechanical Engineer specialized in Buildings and Mechanical Infrastructure Automation Systems Design. 
+                        `I\'m a Mechanical Engineer specialized in Buildings and Infrastructure Automation Systems Design. 
                         I\'m currently working as a BMS and Controls design Group Leader, at one of the top multi-disciplinary design firms globally, 
                         For over than 15 years i\'have accomplished dozens of successful missions of designing and supervising the most iconic and prominent 
                         projects in Africa and the Middle East in the field of Building Management Systems (BMS) and SCADA systems. 
-                        I\'m also the Head of the Revit API tools development team with successful deployments of Revit automation tools that is used 
-                        to significantly cut down the efforts required in time consuming day-to-day tasks for the 500+ engineers of the Mechanical department.`
+                        I\'m also the Head of the Revit API tools development team with successful deployments of Revit automation tools that has 
+                        successfully cut down the efforts required in the design works of the mechanical department.`
                     },
                     {
                         type: 'paragraph',
                         text: 
                         `I'm an enthusiastic app developer who embarked on a self-learning journey with a passion for continuous growth in the ever evolving
-                        world of technology. Through self-study and hands-on projects i acquired  a strong foundation of programming and a divers skill set and
-                        required for delivering neat and efficient applications. I'm a full stack developer with a vast board of knowledge in providing 
-                        Cross-platform desktop apps using Avalonia, web apps with React or Blazor, to backend APIs 
-                        with ASP.NET Framework. With an analytical and systematical, mindset i'm committed to deliver the best solutions that can empower businesses 
-                        and create seamless user experience. Check out this online resume for the various projects and accomplishments i achieved.`
+                        world of technology. Through self-study and hands-on projects i acquired  a strong foundation of programming and a divers skill set 
+                        for delivering neat and efficient applications. I'm a full stack developer with a vast board of knowledge in providing 
+                        Cross-platform desktop apps using Avalonia, web apps with React or Blazor, and backend APIs with ASP.NET Framework. 
+                        With an analytical and systematical, mindset i'm committed to deliver the best solutions that can empower businesses 
+                        and create seamless user experience.`
                     }
                 ]
             }

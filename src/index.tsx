@@ -26,6 +26,7 @@ import { ThemeProvider } from '@mui/material';
 
 // Material Ui Theme
 import { MuiTheme } from './Themes/MuiTheme'
+import PageBox from './components/Common/PageBox';
 
 // Lazy App Pages
 const LazyBMSPage = React.lazy(() => import('./pages/BMSPage'))
@@ -46,33 +47,29 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
               <Route path='/' element={<App/>}>
                 <Route index path='' element={<HomePage />} />
                 <Route path='bms' element={
-                  <React.Suspense fallback='loading...'>
+                  <React.Suspense fallback={<PageBox/>}>
                     <LazyBMSPage/>
-                  </React.Suspense>
-                }/>
+                  </React.Suspense>}/>
                 <Route path='revitapi' element={
-                  <React.Suspense fallback='loading...'>
+                  <React.Suspense fallback={<PageBox/>}>
                     <LazyRevitApiPage/>
-                  </React.Suspense>
-                }/>
+                  </React.Suspense>}/>
                 <Route path='web' element={
-                  <React.Suspense fallback='loading...'>
+                  <React.Suspense fallback={<PageBox/>}>
                     <LazyWebPage/>
-                  </React.Suspense>
-                }>
-                  <Route path='web/:section' element={
+                  </React.Suspense>}>
+                  <Route path=':section' element={
                     <React.Suspense fallback='loading...'>
                       <LazyWebPage/>
-                    </React.Suspense>
-                  }/>
+                    </React.Suspense>}/>
                 </Route>
                 <Route path='desktop' element={
-                  <React.Suspense fallback='loading...'>
+                  <React.Suspense fallback={<PageBox/>}>
                     <LazyDesktopPage/>
                   </React.Suspense>
                 }/>
                 <Route path='contactMe' element={
-                  <React.Suspense fallback='loading...'>
+                  <React.Suspense fallback={<PageBox/>}>
                     <LazyContactMePage/>
                   </React.Suspense>
                 }/>
