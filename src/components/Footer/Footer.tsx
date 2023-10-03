@@ -24,7 +24,12 @@ const Footer = () => {
 
   // Handlers
   const linkHandler = (event: React.MouseEvent<HTMLElement>, link: INavLink) => {
-    navigate(link.route)
+    if(link.type === 'pageRoute'){
+      navigate(link.route)
+    } else if (link.type === 'sectionRoute') {
+        if(link.parentRoute !== undefined)
+            navigate(`${link.parentRoute}/${link.route}`)
+    }
   }
   
   // JSX

@@ -37,7 +37,6 @@ const SideNav: React.FC<AppSideNavbarProps> = ({ open, drawerToggleHandler, navL
     // Functions
     const linkHandler = (link: INavLink) => {
         setExpanded(false)
-        console.log(link)
         if(link.type === 'pageRoute'){
             navigate(link.route)
         } else if (link.type === 'sectionRoute') {

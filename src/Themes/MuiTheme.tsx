@@ -38,6 +38,9 @@ export const MuiTheme = createTheme({
       main: 'rgb(106, 46, 117)',
       dark: 'rgb(69, 25, 82)',
     },
+    appDivider: {
+      main: 'rgb(202, 88, 220)'
+    }
   },
 
   components: {

@@ -18,13 +18,13 @@ const isInViewport = (element: React.MutableRefObject<HTMLDivElement | undefined
     return false
   }
 
-// Props
-interface ITitleProps {
+// Types
+type TitleProps = {
     children: ReactNode
 }
 
 // App Functional Component
-const Title: React.FC<ITitleProps> = ({children}) => {
+const Title: React.FC<TitleProps> = ({children}) => {
 
     // States
     const [inViewPort, setInViewPort] = useState<boolean>(false)
@@ -54,9 +54,7 @@ const Title: React.FC<ITitleProps> = ({children}) => {
                     width: inViewPort ? `60%` : '0',
                     height: '0',
                     marginY: 'auto',
-                    // borderBottom: (theme) => `2px solid ${theme.palette.appPrimary.light}`,
-                    // borderBottom: (theme) => `2px solid rgb(246, 186, 111)`,
-                    borderBottom: (theme) => `2px solid ${theme.palette.appButton.light}`,
+                    borderBottom: (theme) => `2px solid ${theme.palette.appDivider.main}`,
                     marginBottom: '15px',
                     transition: inViewPort ? 'width 3s' : ''
                 }}
