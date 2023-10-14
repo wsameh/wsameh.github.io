@@ -34,7 +34,7 @@ const RefProject: React.FC<IRefProjectProps> = ({project, align}) => {
         display='flex'
         sx={{
           justifyContent: 'space-evenly',
-          flexDirection: {xs: 'column', md: align == 'left' ? 'row' : 'row-reverse'}
+          flexDirection: {xs: 'column', md: align === 'left' ? 'row' : 'row-reverse'}
         }}
       >
         <RefProjectImage project={project} align={align}/>

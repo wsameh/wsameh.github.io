@@ -14,9 +14,9 @@ import PageContent from '../components/Common/PageContent'
 const filterTextContent = (block: string): ITextContentBlock[] => {
   let blocks: ITextContentBlock[] = []
   textContent.forEach((content) => {
-    if(content.page == 'desktop'){
+    if(content.page === 'desktop'){
       content.sections.forEach((section) => {
-          if(section.name == block){
+          if(section.name === block){
             blocks = section.blocks
           }
       })
@@ -46,7 +46,7 @@ const DesktopPage = () => {
       </Title>
 
       {RefProjects.map((item, index) => {
-        if(item.page == 'desktop')
+        if(item.page === 'desktop')
           if(index % 2){
             return (<RefProject project={item} align='right'/>)
           }

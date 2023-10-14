@@ -12,6 +12,7 @@ import { Box,
 
 // Material UI Icons
 import MessageIcon from '@mui/icons-material/EmailOutlined'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
 
 // Data
 import navLinks, { INavLink } from '../../data/NavLinks'
@@ -97,11 +98,31 @@ const Footer = () => {
       </Box>
       <BottomNavigation sx={{ backgroundColor: 'appPrimary.dark' }}>
         <BottomNavigationAction 
-          label="Archive" 
-          icon={<MessageIcon />}
-          sx={{ color: 'appPrimary.contrastText' }}
-          onClick={() => navigate("contactme")}
-        />
+            icon={<MessageIcon />}
+            sx={{ 
+              color: 'appPrimary.contrastText',
+              padding: '6px',
+              width: '50px',
+              minWidth: '50px',
+              maxWidth: '50px',
+            }}
+            onClick={() => navigate("contactme")}
+          />
+        {/* <BottomNavigationAction 
+          component='a'
+          href='https://www.linkedin.com/in/wael-sameh-93772763'
+          icon={<LinkedInIcon />}
+          sx={{ 
+            color: 'appPrimary.contrastText',
+            padding: '6px',
+            width: '50px',
+            minWidth: '50px',
+            maxWidth: '50px',
+            '&:hover': {
+              color: 'appPrimary.contrastText',
+            }
+          }}
+        /> */}
       </BottomNavigation>
     </>
   )

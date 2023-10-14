@@ -20,8 +20,6 @@ export const AlertContext = createContext({} as AlertContextType)
 export const AlertContextProvider = ({children}: AlertContextProviderProps) => {
     const [alert, setAlert] = useState({} as AlertType)
 
-
-
     return (
         <AlertContext.Provider value={{ alert, setAlert }}>
             {children}

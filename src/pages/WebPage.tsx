@@ -3,10 +3,7 @@ import { useRef, useEffect, useMemo } from "react";
 import { useLocation, useParams } from "react-router-dom";
 
 // Material UI Components
-import { Box, Typography, ListItem, ListItemIcon } from "@mui/material"
-
-// Material Icons
-import CircleIcon from '@mui/icons-material/CircleOutlined'
+import { Box  } from "@mui/material"
 
 // App Components
 import PageBox from "../components/Common/PageBox"

@@ -42,7 +42,7 @@ export const AppAlert = () => {
         <Box
             sx={{
                 width: '100%',
-                marginTop: {sm: '60', md: `${topMargin}px`},
+                marginTop: {xs: '60px', md: `${topMargin}px`},
                 position: 'fixed',
                 transition: 'margin-top 0.3s ease-out',
                 zIndex: '5'

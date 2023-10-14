@@ -54,7 +54,7 @@ const Title: React.FC<TitleProps> = ({children}) => {
                     width: inViewPort ? `60%` : '0',
                     height: '0',
                     marginY: 'auto',
-                    borderBottom: (theme) => `2px solid ${theme.palette.appDivider.main}`,
+                    borderBottom: (theme) => `2px solid ${theme.palette.appPrimaryLight.dark}`,
                     marginBottom: '15px',
                     transition: inViewPort ? 'width 3s' : ''
                 }}

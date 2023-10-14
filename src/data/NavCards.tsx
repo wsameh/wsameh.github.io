@@ -1,8 +1,14 @@
-import bms_sm from '../assets/images/NavCards/bms.png'
-import revit_sm from '../assets/images/NavCards/revit_api.png'
-import react_sm from '../assets/images/NavCards/react.png'
-import blazor_sm from '../assets/images/NavCards/blazor.png'
-import desktop_sm from '../assets/images/NavCards/avalonia.png'
+import bms_sm from '../assets/images/NavCards/bms_sm.png'
+import revit_sm from '../assets/images/NavCards/revit_api_sm.png'
+import react_sm from '../assets/images/NavCards/react_sm.png'
+import blazor_sm from '../assets/images/NavCards/blazor_sm.png'
+import desktop_sm from '../assets/images/NavCards/avalonia_sm.png'
+
+import bms_xs from '../assets/images/NavCards/bms_xs.png'
+import revit_xs from '../assets/images/NavCards/revit_api_xs.png'
+import react_xs from '../assets/images/NavCards/react_xs.png'
+import blazor_xs from '../assets/images/NavCards/blazor_xs.png'
+import desktop_xs from '../assets/images/NavCards/avalonia_xs.png'
 
 
 // Interfaces
@@ -20,7 +26,7 @@ export interface INavCard {
 const navCards: INavCard[] = [
     {
         title: 'BMS',
-        imagePath_xs: bms_sm,
+        imagePath_xs: bms_xs,
         imagePath_sm: bms_sm,
         alt: 'Building Management System',
         label: 'Building Management System',
@@ -32,7 +38,7 @@ const navCards: INavCard[] = [
     },
     {
         title: 'Revit',
-        imagePath_xs: revit_sm,
+        imagePath_xs: revit_xs,
         imagePath_sm: revit_sm,
         alt: 'Revit Addins',
         label: 'Revit Addins',
@@ -44,7 +50,7 @@ const navCards: INavCard[] = [
     },
     {
         title: 'React',
-        imagePath_xs: react_sm,
+        imagePath_xs: react_xs,
         imagePath_sm: react_sm,
         alt: 'image-01',
         label: 'React Web Apps',
@@ -55,7 +61,7 @@ const navCards: INavCard[] = [
     },
     {
         title: 'Blazor Web Apps',
-        imagePath_xs: blazor_sm,
+        imagePath_xs: blazor_xs,
         imagePath_sm: blazor_sm,
         alt: 'image-01',
         label: 'Full Stack Blazor Web Apps',
@@ -67,7 +73,7 @@ const navCards: INavCard[] = [
     },
     {
         title: 'Desktop',
-        imagePath_xs: desktop_sm,
+        imagePath_xs: desktop_xs,
         imagePath_sm: desktop_sm,
         alt: 'image-01',
         label: 'Cross-platform Desktop Apps',

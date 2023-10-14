@@ -19,13 +19,13 @@ const RefProjectImage: React.FC<RefProjectImageProps> = ({ project, align }) => 
           component='img'
           src={project.imagePath}
           sx={{
-            width: {xs: '100%', md: '450px', lg: '550px', xl: '600px'},
+            width: {xs: '300px', sm: '400px', md: '450px', lg: '550px', xl: '600px'},
             maxWidth: '600px',
             maxHeight: '400px',
             marginTop: '10px',
             marginBottom: 'auto',
-            marginRight: {xs: 'auto', md: align == 'left' ? '30px' : '0'},
-            marginLeft: {xs: 'auto', md: align == 'right' ? '30px' : '0'},
+            marginRight: {xs: 'auto', md: align === 'left' ? '30px' : '0'},
+            marginLeft: {xs: 'auto', md: align === 'right' ? '30px' : '0'},
           }}
         />
       ) : (

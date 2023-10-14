@@ -78,7 +78,7 @@ const AppToolbar: React.FC<IAppToolbarProps> = ({ navLinks, reduced, drawerToggl
         </Typography>
         <Box flexGrow={1} />
         <Stack direction='column' marginTop='auto' spacing={2}>
-          <SearchBar isVisible={isVisible}/>
+          {/* <SearchBar isVisible={isVisible}/> */}
           <Box
             justifyContent='end'
             sx={{

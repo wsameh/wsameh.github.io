@@ -10,7 +10,7 @@ import AboutMeContainer from './AboutMeContainer'
 import textContent, { ITextContentBlock } from '../../data/TextContent'
 
 // Images
-import aboutMeImage from '../../assets/images/Profile/about-me.jpg'
+import aboutMeImage from '../../assets/images/Profile/about-me.png'
 
 // Constants
 const imageMargin: number = 20

@@ -1,5 +1,5 @@
 // React Libraries
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, useRef } from 'react';
 import { useLocation } from 'react-router-dom'
 import { UseFormHandleSubmit, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -66,12 +66,10 @@ const ContactMe = () => {
     // Handlers
     const changeHandler = (values: FormValues) => {
         setValues(values);
-        setValue('message', values.message, { shouldValidate: false})
+        setValue('message', values.message, { shouldValidate: false })
     }
 
     const submitHandler = async (data: FormValues) => {
-
-        console.log('test')
 
         let messageDTO = {
             user_name: data.name,
@@ -83,6 +81,8 @@ const ContactMe = () => {
             .then((result) => {
                 alertContext.setAlert({severity: 'success', children: 'Message has been successfully submitted', open: true})
                 console.log(`Status: ${result.status}, Message: ${result.text}`)
+                setValues(defaultValues);
+                reset(defaultValues);
             }, (error) => {
                 alertContext.setAlert({severity: 'error', children: 'Message was not submitted', open: true})
                 console.log(`Status: ${error.status}, Message: ${error.text}`)
@@ -128,6 +128,7 @@ const ContactMe = () => {
             {/* Message TextArea */}
             <Box position='relative'>
                 <textarea
+                    id='contact-textarea'
                     className='appTextarea'
                     {...register('message')}
                     value = {values.message}
@@ -143,6 +144,7 @@ const ContactMe = () => {
                 />
                 <Typography
                     className='appTextarea-label'
+                    onClick={() => document.getElementById('contact-textarea')?.focus()}
                     sx={{
                         top: isFocused || values.message ? '0' : '10%',
                         left: isFocused || values.message ? '10px' : '15px',

@@ -1,37 +1,17 @@
-import { useMemo } from 'react'
-
 // App Components
 import PageBox from '../components/Common/PageBox'
 
 // Data
-import textContent, { ITextContentBlock } from '../../src/data/TextContent'
 import RefProjects from '../data/RefProjects'
 import RefProject from '../components/RefProjects/RefProject'
 import Title from '../components/Common/Title'
 import PageContent from '../components/Common/PageContent'
-
-// Functions
-const filterTextContent = (block: string): ITextContentBlock[] => {
-  let blocks: ITextContentBlock[] = []
-  textContent.forEach((content) => {
-    if(content.page == 'bms'){
-      content.sections.forEach((section) => {
-          if(section.name == block){
-            blocks = section.blocks
-          }
-      })
-    }
-  })
-  return blocks
-}
-
+import { useTextContent } from '../hooks/useTextContent'
 
 // App Functional Component Page
 const BMSPage = () => {
 
-  const introTextContent = useMemo<ITextContentBlock[]>(() => {
-    return filterTextContent('intro')
-  }, [])
+  const introTextContent = useTextContent({page: 'bms', block: 'intro'})
 
   // JSX
   return (

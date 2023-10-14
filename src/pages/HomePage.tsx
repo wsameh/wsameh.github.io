@@ -1,7 +1,4 @@
 
-// React Libraries
-import React, { useEffect, useState } from 'react'
-
 // Material UI Components
 import { Box, } from '@mui/material'
 
@@ -13,20 +10,20 @@ import MobileAboutMe from '../components/AboutMe/MobileAboutMe'
 
 // App Functional Component Page
 const HomePage = () => {
-  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth)
+  // const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth)
 
-  useEffect(() => {
+  // useEffect(() => {
     
-    window.addEventListener('resize', windowSizeHandler);
+  //   window.addEventListener('resize', windowSizeHandler);
 
-    return () => {
-      window.removeEventListener('resize', windowSizeHandler);
-    };
-  }, [])
+  //   return () => {
+  //     window.removeEventListener('resize', windowSizeHandler);
+  //   };
+  // }, [])
 
-  const windowSizeHandler = () => {
-    setWindowWidth(window.innerWidth)
-  }
+  // const windowSizeHandler = () => {
+  //   setWindowWidth(window.innerWidth)
+  // }
 
 
   // JSX

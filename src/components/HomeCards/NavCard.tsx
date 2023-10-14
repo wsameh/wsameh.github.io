@@ -1,5 +1,5 @@
 // React Libraries
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 // Material UI Components
@@ -23,6 +23,7 @@ interface INavCardProps {
 
 const NavCard: React.FC<INavCardProps> = ({ content }) => {
 
+
     // States
     const [isHovering, setIsHovering] = useState(false)
 
@@ -39,7 +40,7 @@ const NavCard: React.FC<INavCardProps> = ({ content }) => {
             onMouseLeave={() => setIsHovering(false)}
             raised={isHovering}
             sx={{
-                width: {xs: '100%', sm: '450px'},
+                width: {xs: '300px', sm: '450px'},
                 maxWidth: '450px',
                 marginY: '20px',
                 marginX: '15px',
@@ -72,18 +73,18 @@ const NavCard: React.FC<INavCardProps> = ({ content }) => {
             >
             </CardHeader>
             {/* Image */}
-            <CardMedia sx={{height: {xs: '200px', md: '300px'} }}>
+            <CardMedia sx={{height: {xs: '200px', sm: '300px'} }}>
                 <Box
                     component='img'
                     src={window.innerWidth > 600 ? content.imagePath_sm : content.imagePath_xs}
                     sx={{
                         width: '100%',
-                        maxHeight: {xs: '200px', md: '300px'},
+                        maxHeight: {xs: '200px', sm: '300px'},
                     }}
                 />
             </CardMedia>
             {/* Content */}
-            <CardContent sx={{height: {xs: '100px', sm: '120px', xl: '120px'}, marginBottom: '50px'}}>
+            <CardContent sx={{height: {xs: '120px', sm: '120px', xl: '120px'}, marginBottom: '50px'}}>
                 <Typography variant='navCardText'>
                     {content.text}
                 </Typography>
@@ -91,9 +92,7 @@ const NavCard: React.FC<INavCardProps> = ({ content }) => {
             <CardActions>
                 <Button 
                     variant='appMain' 
-
                     onClick={(event) => clickHandler(event, content)}
-
                 >
                     Learn More
                 </Button>

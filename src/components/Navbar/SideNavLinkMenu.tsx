@@ -66,6 +66,7 @@ const SideNavLinkMenu: React.FC<SideNavLinkMenuProps> = ({ expanded, expandHandl
       >
         {link.children?.map((item) => 
           <Button 
+            key={item.label}
             variant='sideNavLink' 
             onClick={() => linkHandler(item)}
           >

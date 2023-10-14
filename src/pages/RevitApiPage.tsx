@@ -1,13 +1,9 @@
-import React, { useEffect, useRef, useState, useMemo } from 'react'
-
-// Material Ui Components
-import { Typography, ListItem, ListItemIcon, } from '@mui/material'
+import { useMemo } from 'react'
 
 // App Components
 import PageBox from '../components/Common/PageBox'
 
 // Material Icons
-import CircleIcon from '@mui/icons-material/CircleOutlined'
 import PageContent from '../components/Common/PageContent'
 
 // Data
@@ -20,9 +16,9 @@ import Title from '../components/Common/Title'
 const filterTextContent = (block: string): ITextContentBlock[] => {
   let blocks: ITextContentBlock[] = []
   textContent.forEach((content) => {
-    if(content.page == 'revit'){
+    if(content.page === 'revit'){
       content.sections.forEach((section) => {
-          if(section.name == block){
+          if(section.name === block){
             blocks = section.blocks
           }
       })
@@ -53,7 +49,7 @@ const RevitApiPage = () => {
       </Title>
 
       {RefProjects.map((item, index) => {
-        if(item.page == 'revit')
+        if(item.page === 'revit')
           if(index % 2){
             return (<RefProject project={item} align='right'/>)
           }

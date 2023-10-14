@@ -7,7 +7,7 @@ import { Box, Typography } from '@mui/material'
 import textContent, { ITextContentBlock } from '../../data/TextContent'
 
 // Images
-import aboutMeImage from '../../assets/images/Profile/about-me.jpg'
+import aboutMeImage from '../../assets/images/Profile/about-me.png'
 
 // Constants
 const imageMargin: number = 20
@@ -61,14 +61,12 @@ const MobileAboutMe = () => {
                     borderRadius: '50%',
                     margin: '10px auto 10px auto',
                 }}
-            >
-
-            </Box>
-
+            />
             <Typography
                 variant='aboutMe' 
                 textAlign='center'
                 paragraph
+                sx={{paddingTop: '16px'}}
             >
                 {filteredTextBlocks[1].text}
             </Typography>

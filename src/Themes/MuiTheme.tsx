@@ -90,7 +90,7 @@ export const MuiTheme = createTheme({
             display: 'block',
             color: theme.palette.appPrimary.dark,
             [theme.breakpoints.down('sm')]:{
-              fontSize: '0.75rem',
+              fontSize: '0.825rem',
               fontWeight: '400',
             },
             [theme.breakpoints.up('md')]:{
@@ -258,6 +258,18 @@ export const MuiTheme = createTheme({
             height: '35px',
             margin: '10px 10px 5px auto',
             borderRadius: '5px',
+            [theme.breakpoints.up('xs')]:{
+              minWidth: '100px',
+              height: '30px',
+              fontSize: '0.75rem',
+              fontWeight: '400',
+            },
+            [theme.breakpoints.up('md')]:{
+              minWidth: '120px',
+              height: '35px',
+              fontSize: '0.85rem',
+              fontWeight: '400',
+            },
             backgroundColor: theme.palette.appButton.main,
             color: theme.palette.appPrimary.contrastText,
             fontSize: '0.8rem',

@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import navCards from '../../data/NavCards'
 
 // Material UI Components
-import { Box, Grid } from '@mui/material'
+import { Box } from '@mui/material'
 
 // App Components
 import NavCard from './NavCard'
@@ -38,9 +38,7 @@ const HomeCards = () => {
       flexWrap='wrap' 
       justifyContent='center'
     >
-      {navCards.map(item => {
-        return ( windowWidth > 900 ? <NavCard content={item}/> : <NavCard content={item}/>)
-      })}
+      {navCards.map(item => <NavCard content={item}/> )}
     </Box>
   )
 }
